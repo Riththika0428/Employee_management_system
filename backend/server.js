@@ -19,6 +19,7 @@ app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/employees", require("./routes/employeeRoutes"));
 app.use("/api/attendance", require("./routes/attendanceRoutes"));
 app.use("/api/tasks", require("./routes/taskRoutes"));
+app.use("/api/payroll", require("./routes/payrollRoutes"));
 
 // Default Route
 app.get("/", (req, res) => {
