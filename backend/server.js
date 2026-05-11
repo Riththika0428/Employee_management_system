@@ -25,6 +25,10 @@ app.use(
   "/api/dashboard",
   require("./routes/dashboardRoutes")
 );
+app.use(
+  "/api/notifications",
+  require("./routes/notificationRoutes")
+);
 
 // Default Route
 app.get("/", (req, res) => {
