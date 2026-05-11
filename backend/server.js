@@ -17,6 +17,7 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/employees", require("./routes/employeeRoutes"));
+app.use("/api/attendance", require("./routes/attendanceRoutes"));
 
 // Default Route
 app.get("/", (req, res) => {
