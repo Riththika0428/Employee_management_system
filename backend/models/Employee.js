@@ -13,7 +13,22 @@ const employeeSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+     leaveBalance: {
+  sick: {
+    type: Number,
+    default: 10,
+  },
 
+  casual: {
+    type: Number,
+    default: 7,
+  },
+
+  annual: {
+    type: Number,
+    default: 15,
+  },
+},
     department: {
       type: String,
       required: true,
@@ -30,6 +45,23 @@ const employeeSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+
+    leaveBalance: {
+  sick: {
+    type: Number,
+    default: 10,
+  },
+
+  casual: {
+    type: Number,
+    default: 7,
+  },
+
+  annual: {
+    type: Number,
+    default: 15,
+  },
+},
 
     joiningDate: {
       type: Date,
