@@ -29,6 +29,10 @@ app.use(
   "/api/notifications",
   require("./routes/notificationRoutes")
 );
+app.use(
+  "/api/uploads",
+  require("./routes/uploadRoutes")
+);
 
 // Default Route
 app.get("/", (req, res) => {
