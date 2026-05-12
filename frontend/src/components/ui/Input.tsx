@@ -4,6 +4,7 @@ interface Props {
   register: any;
   name: string;
   error?: string;
+  validation?: any;
 }
 
 
@@ -14,6 +15,7 @@ const Input = ({
   register,
   name,
   error,
+  validation,
 }: Props) => {
   return (
     <div className="space-y-1">
@@ -23,17 +25,10 @@ const Input = ({
 
       <input
         type={type}
-        {...register(name)}
-        className="
-        w-full
-        border
-        rounded-lg
-        px-4
-        py-3
-        outline-none
-        focus:ring-2
-        focus:ring-blue-500
-        "
+        {...register(name, validation)}
+        className={`w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
+          error ? "border-red-500" : "border-gray-300"
+        }`}
       />
 
       {error && (

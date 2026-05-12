@@ -31,6 +31,14 @@ const ProtectedRoute = ({
 
 
 
+  if (!currentUser) {
+    return null;
+  }
+
+  if (roles && !roles.includes(currentUser?.role)) {
+    return null;
+  }
+
   return children;
 };
 

@@ -3,12 +3,12 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
 import { AuthProvider } from "@/context/AuthContext";
-
-import {
-  ToastContainer,
-} from "react-toastify";
-
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 
 
@@ -17,12 +17,12 @@ export default function App({
   pageProps,
 }: AppProps) {
   return (
-    <AuthProvider>
-      <Component {...pageProps} />
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <Component {...pageProps} />
 
-      <ToastContainer
-        position="top-right"
-      />
-    </AuthProvider>
+        <ToastContainer position="top-right" />
+      </AuthProvider>
+    </QueryClientProvider>
   );
 }
